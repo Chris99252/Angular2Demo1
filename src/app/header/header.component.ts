@@ -9,12 +9,26 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   title = "<i>PandaChris<i>";
   titleLink = "http://blog.miniasp.com/";
+  editTitleText = this.title;
+
   num:number = 1;
 
   constructor() {};
 
   PlusOne(){
-    this.num=this.num+1
+    this.num = this.num + 1;
+  };
+
+  EditTitle($event: KeyboardEvent){
+    if ($event.keyCode == 13) {
+      this.title = this.editTitleText;
+    }
+  };
+
+  EditTitleDOM($event: KeyboardEvent , input: HTMLInputElement){
+    if ($event.keyCode == 13) {
+      this.title = input.value;
+    }
   };
 
   ngOnInit() {
