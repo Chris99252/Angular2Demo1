@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   EditTitle($event: KeyboardEvent){
     if ($event.keyCode == 13) {
       this.title = this.editTitleText;
+      this.isEdit = false;
     }
   };
 

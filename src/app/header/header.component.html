@@ -31,7 +31,7 @@
               <a *ngIf="!isEdit" (dblclick)="EnterEdit($event)" title="title" [innerHTML]="title" (mouseover)='PlusOne()'></a>
               <input *ngIf="isEdit"  type="text" [value]="editTitleText" #editTitleTextDOM (keyup)="EditTitleDOM($event, editTitleTextDOM)">
               </h1>
-            <h3 class="subTitle">
+            <h3 [ngClass]="{subTitle: (num % 2 == 0)}" [ngStyle]="{color: 'red'}">
               <!--<input type="text" [value]="editTitleText" (keyup)="EditTitle($event)" [(ngModel)]="editTitleText">-->
               <!--<input type="text" [(ngModel)]="title">-->
               記載著 Will 在網路世界的學習心得與技術分享
