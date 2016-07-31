@@ -7,13 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['article.component.css']
 })
 export class ArticleComponent implements OnInit {
-
   @Input()
   item: any;
 
-  constructor() {}
+  constructor() {};
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {};
 }
