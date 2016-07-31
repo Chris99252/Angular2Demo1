@@ -8,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   title = 'PandaChris';
-  constructor() {}
+  num:number = 1;
+
+  constructor() {};
+
+  PlusOne(){
+    this.num=this.num+1
+  };
 
   ngOnInit() {
-  }
+  };
 }
