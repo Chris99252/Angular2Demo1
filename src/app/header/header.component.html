@@ -29,7 +29,7 @@
           <hgroup class="pull-left">
             <h1>
               <a *ngIf="!isEdit" (dblclick)="EnterEdit($event)" title="title" [innerHTML]="title" (mouseover)='PlusOne()'></a>
-              <input *ngIf="isEdit"  type="text" [value]="editTitleText" #editTitleTextDOM (keyup)="EditTitleDOM($event, editTitleTextDOM)">
+              <input *ngIf="isEdit"  type="text" [value]="title" #editTitleTextDOM (keyup)="EditTitleDOM($event, editTitleTextDOM)">
               </h1>
             <h3 [ngClass]="{subTitle: (num % 2 == 0)}" [ngStyle]="{color: 'red'}">
               <!--<input type="text" [value]="editTitleText" (keyup)="EditTitle($event)" [(ngModel)]="editTitleText">-->

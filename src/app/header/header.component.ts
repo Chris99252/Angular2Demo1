@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title = "<i>PandaChris<i>";
+
+  @Input()
+  title: string;
+
   titleLink = "http://blog.miniasp.com/";
-  editTitleText = this.title;
   isEdit: boolean = false;
 
   num:number = 1;
@@ -22,7 +24,6 @@ export class HeaderComponent implements OnInit {
 
   EditTitle($event: KeyboardEvent){
     if ($event.keyCode == 13) {
-      this.title = this.editTitleText;
       this.isEdit = false;
     }
   };
