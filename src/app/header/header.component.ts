@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   title = "<i>PandaChris<i>";
   titleLink = "http://blog.miniasp.com/";
   editTitleText = this.title;
+  isEdit: boolean = false;
 
   num:number = 1;
 
@@ -28,7 +29,13 @@ export class HeaderComponent implements OnInit {
   EditTitleDOM($event: KeyboardEvent , input: HTMLInputElement){
     if ($event.keyCode == 13) {
       this.title = input.value;
+      this.isEdit = false;
     }
+  };
+
+  EnterEdit($event: MouseEvent){
+    this.isEdit = true;
+    $event.preventDefault();
   };
 
   ngOnInit() {
